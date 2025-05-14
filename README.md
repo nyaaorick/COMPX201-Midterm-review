@@ -298,11 +298,7 @@
         * "Week 5 - Recursion.pdf", Slides 24-26 (`Overheads of recursion`).
 
 ## 三、AVL树 (Adelson-Velsky and Landis Tree)
-
-# AVL树平衡与旋转 - 快速笔记
-
 ## 一、平衡因子 (Balance Factor - BF)
-
 
 平衡因子 = 左孩高 - 右孩高。
 LL = 失衡节点2，失衡节点左孩1
