@@ -439,3 +439,88 @@
 3.  **“黑路同”**
     * **对应属性：** 属性5 - 对于每个节点，从该节点到其所有后代叶子节点的简单路径上，均包含相同数目的黑色节点（这个数目称为该节点的“黑高”，black-height）。
     * **解释：** 这是红黑树平衡性的核心保证。从任一节点出发，到达任何一个NIL叶子的路径所经过的黑色节点数量是相同的。
+
+
+
+
+## 概念解释类题目复习：
+
+## 1. 队列的适用性 (Queues)
+
+**Q: Justify why a Queue is better suited for a customer support ticketing system.**
+**问：解释为什么队列更适合客户支持工单系统。**
+
+* **EN (学生式答案):** "Choose Queue because a ticketing system needs **first-come, first-served (FIFO)**. New tickets go to the back, and are processed from the front, ensuring fairness. A Stack is last-in, first-out, which is wrong for this."
+* **中文 (学生式答案):** “选择队列是因为工单系统要求**先来的先处理 (先进先出)**。新工单加到队尾，从队头处理，保证公平和服务顺序。栈是后进先出，不符合这要求。”
+
+**核心点 (Key Points):**
+* FIFO (先进先出)
+* Relate to scenario: tickets processed in order received (关联场景：工单按接收顺序处理)
+* Contrast with Stack (对比栈)
+
+---
+
+## 2. BST的对数搜索时间 (BST Logarithmic Search)
+
+**Q: Explain how binary search trees support logarithmic search times.**
+**问：解释二叉搜索树如何支持对数搜索时间。**
+
+* **EN (学生式答案):** "BSTs are **ordered**. When searching, you compare with the current node: go left if smaller, right if larger. In a balanced tree, this **cuts the search area roughly in half** each time. So, even with many nodes, searching is fast, related to the logarithm of the node count."
+* **中文 (学生式答案):** “二叉搜索树能实现对数搜索时间，主要是因为它**有序**。每次查找时，和当前节点比较：小了就往左，大了就往右。理想情况下（树比较平衡），每比较一次，搜索范围就**大约减半**。所以节点再多也快，查找次数和节点数的对数差不多。”
+
+**核心点 (Key Points):**
+* Ordered property (有序性)
+* Comparison leads to halving search space (in a balanced tree) (比较导致搜索空间减半 - 在平衡树中)
+* Logarithmic relationship (对数关系)
+
+---
+
+## 3. 递归方法的三个要求 (Requirements for Recursion)
+
+**Q: List and explain the three requirements for a properly designed recursive method.**
+**问：列出并解释正确设计的递归方法必须满足的三个要求。**
+
+* **EN (学生式答案):** "A good recursive method needs three things:
+    1.  **A 'time to stop' (Base Case):** Solves a small enough problem directly without calling itself, to avoid an infinite loop.
+    2.  **Problem must get smaller (Recursive Step/Reduction):** Each self-call must tackle a simpler version of the problem, moving closer to the base case.
+    3.  **Actually call itself (Recursive Call):** Use the same method to solve that smaller problem."
+* **中文 (学生式答案):** “一个好的递归方法需要三样东西：
+    1.  **要有‘停下来’的时候 (基本情况):** 问题小到可以直接解决，不再调用自己，不然就没完没了。
+    2.  **问题要能变小 (递归步骤/问题规模缩小):** 每次调用自己，交给自己解决的问题要比当前问题更简单、更接近‘停下来’的情况。
+    3.  **要真的调用自己 (递归调用):** 用同样的方法去解决那个变小了的问题。”
+
+**核心点 (Key Points):**
+* Base Case (to stop) (基本情况 - 用于停止)
+* Recursive Step (problem gets smaller, approaches base case) (递归步骤 - 问题变小，趋向基本情况)
+* Recursive Call (calls itself) (递归调用 - 调用自身)
+
+---
+
+## 4. 数据结构对比：数组 vs. 链表 (Arrays vs. Linked Lists)
+
+**Q: Compare and contrast arrays and linked lists in terms of insertion/deletion and access time.**
+**问：比较和对比数组和链表在插入/删除和访问时间方面的特点。**
+
+* **EN (学生式答案):** "Arrays are fast for **accessing** elements (direct index, $O(1)$), but slow for **inserting/deleting** in the middle ($O(n)$) because elements need to shift. Linked lists are slow for access ($O(n)$, must traverse), but faster for **inserting/deleting** once the position is found ($O(1)$ by changing pointers). Linked lists are also flexible in size."
+* **中文 (学生式答案):** “数组**查（访问）**东西快（直接用下标，$O(1)$），但中间**插/删**东西慢（$O(n)$），因为后面的都要动。链表查东西慢（$O(n)$，得一个个找），但在找到位置后插/删都快（$O(1)$，改几个指针就行）。链表大小也灵活。”
+
+**核心点 (Key Points):**
+* Array: Fast access, slow middle insert/delete. (数组：访问快，中间插入/删除慢)
+* Linked List: Slow access, fast insert/delete (at known position). Flexible size. (链表：访问慢，（已知位置）插入/删除快。大小灵活)
+
+
+---
+
+## 5. BST平衡的目的 (Purpose of Balancing BST)
+
+**Q: What is the purpose of balancing a binary search tree (e.g., in AVL trees)?**
+**问：平衡二叉搜索树（例如AVL树）的目的是什么？**
+
+* **EN (学生式答案):** "Balancing a BST (like an AVL tree) is to **prevent it from becoming skewed** (like a linked list). If it's skewed, search becomes slow ($O(n)$). Balancing keeps the tree's height low (around $O(\log n)$), so searches stay fast at $O(\log n)$."
+* **中文 (学生式答案):** “平衡BST（像AVL树）是为了**防止它长歪**（变得像链表）。如果树歪了，查东西会很慢（$O(n)$）。平衡能保证树的高度总是比较低（大约 $O(\log n)$），这样查东西就能一直很快，保持 $O(\log n)$ 的效率。”
+
+**核心点 (Key Points):**
+* Prevent skewed tree / linked list worst-case. (防止树倾斜/链表化)
+* Maintain low height ($O(\log n)$). (保持较低的高度)
+* Ensure $O(\log n)$ performance for operations. (确保操作的 $O(\log n)$ 性能)
+
